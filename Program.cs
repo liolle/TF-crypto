@@ -13,16 +13,19 @@ builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 builder.Services.AddSingleton<Crypto>();
-builder.Services.AddSingleton<IDatabaseContext,DatabaseContext>();
-builder.Services.AddScoped<IMessageService,MessageService>();
+builder.Services.AddSingleton<IDatabaseContext, DatabaseContext>();
+builder.Services.AddScoped<IMessageService, MessageService>();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
 app.UseHttpsRedirection();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 

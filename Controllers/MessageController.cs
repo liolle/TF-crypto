@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace cryper.controllers;
 
+[Controller]
 public class MessageController(IMessageService messageService) : ControllerBase
 {
     [HttpPost]
