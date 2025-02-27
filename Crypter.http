@@ -1,0 +1,6 @@
+@Crypter_HostAddress = http://localhost:5274
+
+GET {{Crypter_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
